@@ -1,4 +1,4 @@
-name: Deploy Angular Frontend to Azure
+name: Deploy-V1
 
 on:
   workflow_dispatch:  # Allows manual deployment with branch selection
