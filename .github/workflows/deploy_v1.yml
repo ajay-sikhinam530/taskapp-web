@@ -29,10 +29,17 @@ jobs:
       - name: Build Angular App
         run: npm run build --prod
 
+      - name: Verify Build Output
+        run: ls -la dist/taskapp-web
+
+      - name: Zip Build Files
+        run: cd dist/taskapp-web && zip -r ../taskapp-web.zip . && cd ../../
+
       - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy to Azure Web App
-        run: az webapp deploy --resource-group taskapp-rg --name taskapp --src-path dist/taskapp-web
+      - name: Deploy Angular App to Azure
+        run: |
+          az webapp deployment source config-zip --resource-group taskapp-rg --name taskapp --src-path dist/taskapp-web.zip --type static
