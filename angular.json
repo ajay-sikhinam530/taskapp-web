@@ -38,6 +38,8 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "dist/taskapp-web/browser",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
