@@ -29,6 +29,11 @@
                 "glob": "staticwebapp.config.json",
                 "input": "./",
                 "output": "./"
+              },
+              {
+                "glob": "nginx.conf",
+                "input": "./",
+                "output": "./"
               }
             ],
             "styles": [
