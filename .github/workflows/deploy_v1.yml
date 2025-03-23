@@ -35,4 +35,4 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Web App
-        run: az webapp deploy --resource-group taskapp-rg --name taskapp --src-path dist/<ANGULAR_BUILD_FOLDER>
+        run: az webapp deploy --resource-group taskapp-rg --name taskapp --src-path dist/taskapp-web
