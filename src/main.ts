@@ -1,6 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+import { TaskListComponent } from '../src/task-list/task-list.component';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter([
+      { path: '', component: TaskListComponent }, // Default route
+      { path: 'tasks', component: TaskListComponent }
+    ])
+  ]
+}).catch(err => console.error(err));
