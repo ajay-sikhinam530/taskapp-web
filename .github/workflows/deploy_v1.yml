@@ -42,4 +42,4 @@ jobs:
 
       - name: Deploy Angular App to Azure
         run: |
-          az webapp deployment source config-zip --resource-group taskapp-rg --name taskapp --src-path dist/taskapp-web.zip --type static
+          az webapp deployment source config-zip --resource-group taskapp-rg --name taskapp --src dist/taskapp-web.zip
