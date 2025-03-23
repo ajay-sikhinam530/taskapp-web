@@ -44,4 +44,4 @@ jobs:
         with:
           app-name: taskapp  # Replace with your Azure App Service name
           slot-name: production  # Optional: Specify a deployment slot
-          package: dist/taskapp-web  # Path to the built Angular app
+          package: dist/taskapp-web/browser  # Path to the built Angular app
